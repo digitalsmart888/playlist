@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<title>Playlist - DigitalSmart</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f8ff;
+    padding: 20px;
+  }
+  .player-box {
+    background: #e8f1ff;
+    border: 1px solid #c5d8ff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .playlist-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #c5d8ff;
+    cursor: pointer;
+    color: #0b4ecb;
+    font-weight: bold;
+  }
+  .playlist-item:hover {
+    color: #083b99;
+  }
+  audio {
+    width: 100%;
+    margin-top: 15px;
+  }
+  h3 {
+    color: #083b99;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="player-box">
+  <h3>🎵 DigitalSmart Playlist</h3>
+
+  <audio id="player" controls>
+    <source src="https://docs.google.com/uc?export=download&id=1AkfZ6astL_WnTodV455PJo6kBafGIsLe">
+  </audio>
+
+  <div class="playlist-item" data-src="https://docs.google.com/uc?export=download&id=1AkfZ6astL_WnTodV455PJo6kBafGIsLe">
+    Амьдралын Дуу
+  </div>
+
+  <div class="playlist-item" data-src="https://docs.google.com/uc?export=download&id=1jt7S17Z54n5UuwL5HNqRSEuiyxHhhvyL">
+    Сэтгэлийн Хөндий
+  </div>
+
+  <div class="playlist-item" data-src="https://docs.google.com/uc?export=download&id=1v4bAk5fpB58uSeuaW5unA6enq42-2xKi">
+    Дурсамжууд
+  </div>
+
+  <div class="playlist-item" data-src="https://docs.google.com/uc?export=download&id=1j7gdp2uXAoG6rPZliQ1XMexUyf2itzHZ">
+    Зүрхний Аялгуу
+  </div>
+</div>
+
+<script>
+const player = document.getElementById("player");
+const items = document.querySelectorAll(".playlist-item");
+
+items.forEach(item => {
+  item.addEventListener("click", () => {
+    player.src = item.dataset.src;
+    player.play();
+  });
+});
+</script>
+
+</body>
+</html>
